@@ -3,6 +3,7 @@ import {
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY
 } from "./actions";
+import { useReducer } from 'react';
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -25,3 +26,7 @@ export const reducer = (state, action) => {
             return state;
     }
 };
+
+export function useProductReducer(initialState) {
+    return useReducer(reducer, initialState);
+}
